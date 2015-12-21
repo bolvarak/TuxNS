@@ -2,21 +2,21 @@
 /// Headers //////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-#include "QCoreApplication"
-#include "QVariant"
-#include "externals/HeimdallGI/CGI.h"
-#include "externals/HeimdallGI/Configuration.h"
-#include "externals/HeimdallGI/DBI.h"
-#include "externals/HeimdallGI/Log.h"
-#include "externals/HeimdallGI/Router.h"
-#include "externals/HeimdallGI/Template.h"
-#include "externals/HeimdallGI/View.h"
+#include "QtCore/QCoreApplication"
+#include "QtCore/QVariant"
+#include "../externals/HeimdallGI/CGI.h"
+#include "../externals/HeimdallGI/Configuration.h"
+#include "../externals/HeimdallGI/DBI.h"
+#include "../externals/HeimdallGI/Log.h"
+#include "../externals/HeimdallGI/Router.h"
+#include "../externals/HeimdallGI/Template.h"
+#include "../externals/HeimdallGI/View.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Controllers //////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-//#include "controllers/DDNS.h"
+#include "controllers/DDNS.h"
 #include "controllers/GeoIP.h"
 
 ///////////////////////////////////////////////////////////////////////////////
