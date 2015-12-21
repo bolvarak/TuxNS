@@ -1,3 +1,6 @@
 [submodule "source/externals/HeimdallGI"]
 	path = source/externals/HeimdallGI
 	url = https://bolvarak@bitbucket.org/bolvarak/heimdallgi.git
+[submodule "source/source/externals/HeimdallGI"]
+	path = source/source/externals/HeimdallGI
+	url = https://bolvarak@bitbucket.org/bolvarak/heimdallgi.git
