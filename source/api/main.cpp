@@ -4,19 +4,19 @@
 
 #include "QtCore/QCoreApplication"
 #include "QtCore/QVariant"
-#include "../externals/HeimdallGI/CGI.h"
-#include "../externals/HeimdallGI/Configuration.h"
-#include "../externals/HeimdallGI/DBI.h"
-#include "../externals/HeimdallGI/Log.h"
-#include "../externals/HeimdallGI/Router.h"
-#include "../externals/HeimdallGI/Template.h"
-#include "../externals/HeimdallGI/View.h"
+#include "externals/HeimdallGI/CGI.h"
+#include "externals/HeimdallGI/Configuration.h"
+#include "externals/HeimdallGI/DBI.h"
+#include "externals/HeimdallGI/Log.h"
+#include "externals/HeimdallGI/Router.h"
+#include "externals/HeimdallGI/Template.h"
+#include "externals/HeimdallGI/View.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Controllers //////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-#include "controllers/DDNS.h"
+// #include "controllers/DDNS.h"
 #include "controllers/GeoIP.h"
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -42,7 +42,7 @@ int main(int intArguments, char* chrArguments[]) {
 	// Instantiate the GeoIP controller
 	GeoIPController* ctrlGeoIP    = new GeoIPController(hgiGateway);
 	// Instantiate the DDNS Controller
-	DDNSController* ctrlDDNS      = new DDNSController(hgiGateway);
+ 	// DDNSController* ctrlDDNS      = new DDNSController(hgiGateway);
 	// Set the logger into the router
 	hgiRouter->SetLogger(hgiLog);
 	// Define the GeoIP Dynamic Route
@@ -52,7 +52,7 @@ int main(int intArguments, char* chrArguments[]) {
 	hgiRouter->AddRoute("/geoip/[:ipAddress]/json", ctrlGeoIP, "staticJSON");
 	hgiRouter->AddRoute("/geoip/[:ipAddress]/xml",  ctrlGeoIP, "staticXML");
 	// DDNS Routes
-	hgiRouter->AddRoute("/ddns/account-details",    )
+	// hgiRouter->AddRoute("/ddns/account-details",    )
 	// Define the response
 	HeimdallGI::View* hgiResponse;
 	// Check for a defned request path

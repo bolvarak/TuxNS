@@ -6,13 +6,12 @@
 
 QT             += core sql network
 QT             -= gui
-TARGET          = api
+TARGET          = tuxns
 CONFIG         += console link_prl
 LIBS           += -lGeoIP
 CONFIG         -= app_bundle
 QMAKE_CXXFLAGS += -std=c++11
-DEFINES        += HGI_CONFIG_FILE=\"\\\"/var/websites/apis.cdndepo.com/private/api/application.ini\\\"\"
-# DEFINES        += HGI_CONFIG_FILE=\"\\\"/home/tbrown/api-cdndepo-com/application.ini\\\"\"
+DEFINES        += HGI_CONFIG_FILE=\"\\\"$$PWD/application.ini\\\"\"
 TEMPLATE        = app
 SOURCES        += main.cpp \
 	externals/HeimdallGI/CGI.cpp \
@@ -20,14 +19,13 @@ SOURCES        += main.cpp \
 	externals/HeimdallGI/DBI.cpp \
 	externals/HeimdallGI/ErrorController.cpp \
 	externals/HeimdallGI/HTML.cpp \
-        #externals/HeimdallGI/ISPConfig.cpp \
 	externals/HeimdallGI/Log.cpp \
 	externals/HeimdallGI/MaxMind.cpp \
 	externals/HeimdallGI/Router.cpp \
 	externals/HeimdallGI/Template.cpp \
 	externals/HeimdallGI/View.cpp \
 	controllers/GeoIP.cpp \
-        #controllers/DDNS.cpp
+	#controllers/DDNS.cpp
 
 HEADERS        += \
 	externals/HeimdallGI/CGI.h \
@@ -35,14 +33,13 @@ HEADERS        += \
 	externals/HeimdallGI/DBI.h \
 	externals/HeimdallGI/ErrorController.h \
 	externals/HeimdallGI/HTML.h \
-        #externals/HeimdallGI/ISPConfig.h \
 	externals/HeimdallGI/Log.h \
 	externals/HeimdallGI/MaxMind.h \
 	externals/HeimdallGI/Router.h \
 	externals/HeimdallGI/Template.h \
 	externals/HeimdallGI/View.h \
 	controllers/GeoIP.h \
-        #controllers/DDNS.h
+	#controllers/DDNS.h
 
 DISTFILES      += \
 	application.ini \
