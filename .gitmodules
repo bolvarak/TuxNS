@@ -1,3 +1,6 @@
 [submodule "source/api/externals/HeimdallGI"]
 	path = source/api/externals/HeimdallGI
 	url = https://bolvarak@bitbucket.org/bolvarak/heimdallgi.git
+[submodule "source/api/externals/GeoIP"]
+	path = source/api/externals/GeoIP
+	url = git@github.com:maxmind/geoip-api-c.git
