@@ -28,3 +28,9 @@
 *.app
 
 source/build/*
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+Makefile 
+moc_*
+*_atomoc.cpp
