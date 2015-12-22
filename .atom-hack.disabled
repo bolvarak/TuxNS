@@ -1,9 +1,0 @@
-{
-	"type":"remote",
-	"host":"localhost",
-	"username":"tbrown",
-	"port":22,
-	"privateKey":"/home/tbrown/.ssh/id_rsa",
-	"remoteDir":"/var/websites/tuxns",
-	"autoPush": true
-}
