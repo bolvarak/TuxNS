@@ -28,15 +28,15 @@ void GeoIPController::logRequest(HeimdallGI::CGI *hgiRequest, QString strRespons
 	// Initialize the database connection
 	QSqlDatabase qsdAPI                = QSqlDatabase::addDatabase(HeimdallGI::Configuration::Get("Database.sqlDriver").toString());
 	// Set the host name
-	qsdAPI.setHostName(HeimdallGI::Configuration::Get("Database.serverHost").toString());
+	qsdAPI.setHostName(QString(TUXNS_DB_HOST));
 	// Set the host port
-	qsdAPI.setPort(HeimdallGI::Configuration::Get("Database.serverPort").toInt());
+	qsdAPI.setPort(QString(TUXNS_DB_PORT).toInt());
 	// Set the database name
-	qsdAPI.setDatabaseName(HeimdallGI::Configuration::Get("Database.dataBase").toString());
+	qsdAPI.setDatabaseName(QString(TUXNS_DB));
 	// Set the database username
-	qsdAPI.setUserName(HeimdallGI::Configuration::Get("Database.userName").toString());
+	qsdAPI.setUserName(QString(TUXNS_DB_USER));
 	// Set the database password
-	qsdAPI.setPassword(HeimdallGI::Configuration::Get("Database.userPass").toString());
+	qsdAPI.setPassword(QString(TUXNS_DB_PASS));
 	// Open the database connection
 	if (qsdAPI.open()) {
 		// Create the query
@@ -67,10 +67,10 @@ void GeoIPController::openConnection(const QHostAddress &qhaIpAddress) {
 	// Check for IPv6
 	if (qhaIpAddress.protocol() == QAbstractSocket::IPv6Protocol) {
 		// Initialize the GeoIP Database
-		this->mMaxMind.openConnection(HeimdallGI::Configuration::Get("Paths.geoIpCityDatabase6").toString(), HeimdallGI::Configuration::Get("Paths.geoIpIspDatabase6").toString());
+		this->mMaxMind.openConnection(QString(GEOIP_CITYv6_DB), QString(GEOIP_ISPv6_DB));
 	} else {
 		// Initialize the GeoIP Database
-		this->mMaxMind.openConnection(HeimdallGI::Configuration::Get("Paths.geoIpCityDatabase").toString(), HeimdallGI::Configuration::Get("Paths.geoIpIspDatabase").toString());
+		this->mMaxMind.openConnection(QString(GEOIP_CITY_DB), QString(GEOIP_ISP_DB));
 	}
 }
 
@@ -175,7 +175,7 @@ void GeoIPController::dynamicJSON(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View
 	// Set the JSON into the view
 	hgiResponse->SetPageValue("responseJSON", QJsonDocument(qjoResponse).toJson());
 	// Log the request
-	this->logRequest(hgiRequest, strResponseFormat, QString(QJsonDocument(qjoResponse).toJson()));
+	// this->logRequest(hgiRequest, strResponseFormat, QString(QJsonDocument(qjoResponse).toJson()));
 }
 
 void GeoIPController::dynamicXML(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View *&hgiResponse) {
@@ -278,7 +278,7 @@ void GeoIPController::dynamicXML(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View 
 	// Set the XML into the view
 	hgiResponse->SetPageValue("responseXML", QString(qbaXML));
 	// Log the request
-	this->logRequest(hgiRequest, "xml", QString(qbaXML));
+	// this->logRequest(hgiRequest, "xml", QString(qbaXML));
 }
 
 void GeoIPController::staticJSON(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View *&hgiResponse) {
@@ -386,7 +386,7 @@ void GeoIPController::staticJSON(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View 
 	// Set the JSON into the view
 	hgiResponse->SetPageValue("responseJSON", QJsonDocument(qjoResponse).toJson());
 	// Log the request
-	this->logRequest(hgiRequest, strResponseFormat, QString(QJsonDocument(qjoResponse).toJson()));
+	// this->logRequest(hgiRequest, strResponseFormat, QString(QJsonDocument(qjoResponse).toJson()));
 }
 
 void GeoIPController::staticXML(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View *&hgiResponse) {
@@ -505,5 +505,5 @@ void GeoIPController::staticXML(HeimdallGI::CGI *&hgiRequest, HeimdallGI::View *
 	// Set the XML into the view
 	hgiResponse->SetPageValue("responseXML", QString(qbaXML));
 	// Log the request
-	this->logRequest(hgiRequest, "xml", QString(qbaXML));
+	// this->logRequest(hgiRequest, "xml", QString(qbaXML));
 }

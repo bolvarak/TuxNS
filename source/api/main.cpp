@@ -52,7 +52,7 @@ int main(int intArguments, char* chrArguments[]) {
 	hgiRouter->AddRoute("/geoip/[:ipAddress]/json", ctrlGeoIP, "staticJSON");
 	hgiRouter->AddRoute("/geoip/[:ipAddress]/xml",  ctrlGeoIP, "staticXML");
 	// DDNS Routes
-	// hgiRouter->AddRoute("/ddns/account-details",    )
+	
 	// Define the response
 	HeimdallGI::View* hgiResponse;
 	// Check for a defned request path
