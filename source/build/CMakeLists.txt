@@ -22,7 +22,6 @@ set(SOURCE_FILES
 		../api/externals/HeimdallGI/ErrorController.h
 		../api/externals/HeimdallGI/HTML.h
 		../api/externals/HeimdallGI/Log.h
-		# ../api/externals/GeoIP/libGeoIP/pread.h
 		../api/externals/GeoIP/libGeoIP/GeoIP_internal.h
 		../api/externals/GeoIP/libGeoIP/GeoIP.h
 		../api/externals/GeoIP/libGeoIP/GeoIPCity.h
@@ -32,15 +31,12 @@ set(SOURCE_FILES
 		../api/externals/HeimdallGI/View.h
 		../api/controllers/GeoIP.h
 		../api/main.cpp
-		../api/externals/HeimdallGI/PgModel.cpp
-		../api/externals/HeimdallGI/PgModel.h
 		../api/externals/HeimdallGI/CGI.cpp
 		../api/externals/HeimdallGI/Configuration.cpp
 		../api/externals/HeimdallGI/DBI.cpp
 		../api/externals/HeimdallGI/ErrorController.cpp
 		../api/externals/HeimdallGI/HTML.cpp
 		../api/externals/HeimdallGI/Log.cpp
-		# ../api/externals/GeoIP/libGeoIP/pread.c
 		../api/externals/GeoIP/libGeoIP/timeZone.c
 		../api/externals/GeoIP/libGeoIP/regionName.c
 		../api/externals/GeoIP/libGeoIP/GeoIP_deprecated.c
